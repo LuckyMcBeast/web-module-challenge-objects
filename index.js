@@ -1,19 +1,25 @@
 ///////////////Menu Items (MVP)///////////////////
 
 const latte = {name: "Cafe Latte", price: 4, category: "Drinks"};
-const burger = {name: "Burger", price: 18, category: "Lunch"};
 const breakfastBurrito = {name: "Breakfast Burrito", price: 16, category:"Breakfast"};
 
 /* Task 1a: write a function to return more menu items with the same format as the items above. */
 
 function createMenuItem(name, cost, category){
-    /* Code here */
+    return {name: name, cost:cost, category:category}
 }
 
+const bread = createMenuItem("Bread", 500, "Lux");
+print(bread)
+
 /* Task 1b: use your function to create 3 more menu items. You may add any items to the menu that you'd like */
+const plate = createMenuItem("Plate", 2, "Stuff");
+const notFood = createMenuItem("Cat", "OVER 9000", "Animal");
+const potPie = createMenuItem("Pot Pie", 7, "Hot Food");
 
-
-
+print(plate)
+print(notFood)
+print(potPie)
 /* Task 2: You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to your burger object that automatically calculates price given a string as a parameter. 
 
 Your method should accept: 
@@ -24,7 +30,20 @@ and should return a number.
 
 For example, burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2*/
 
+const burger = {name: "Burger", price: 18, category: "Lunch", 
+discount: function(code){
+  if(code.toLowerCase() === "teacher" || 
+  code.toLowerCase() === "student"){
+    this.price = this.price*.75;
+  }
+  else{
+    this.price = this.price*.9
+  }
+}};
 
+print(burger)
+burger.discount("teacher")
+print(burger)
 
 ///////////////Reviews (MVP)///////////////////
 
@@ -135,4 +154,10 @@ The returned object should have the following characteristics:
 function carMaker(/* code here */) {
     /* code here */
     
+}
+
+
+
+function print(toBePrinted){
+  console.log(toBePrinted)
 }

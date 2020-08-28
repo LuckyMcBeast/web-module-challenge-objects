@@ -58,10 +58,21 @@ const reviews = [{name: "Daniela", rating: 5, feedback:"Beautiful atmosphere and
 ]
 
 /* Task 3: Console.log just Julius' feedback */
-
+function feedbackByName(userName){
+  
+}
+for(let key in reviews){
+  if(reviews[key].name == "Julius"){
+      print(reviews[key].feedback)
+  }
+}
 
 /* Task 4: Add a new rating with your (fictitious) opinions of the restaurant in the same format as the reviews above. */
-
+function createNewReview(name, rating, feedback){
+  return {name: name, rating: rating, feedback: feedback}
+}
+reviews.push(createNewReview("Cullen", 1, "Did not have lobster. Bread cost too much."))
+print(reviews)
 
 /* Task 5: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
 
